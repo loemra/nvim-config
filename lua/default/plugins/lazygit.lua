@@ -6,6 +6,7 @@ return {
 	},
 	config = function()
 		require("telescope").load_extension("lazygit")
-		vim.keymap.set("n", "<leader>gg", require("telescope").extensions.lazygit.lazygit)
+		vim.keymap.set("n", "<leader>fg", require("telescope").extensions.lazygit.lazygit)
+		vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>")
 	end,
 }
