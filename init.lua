@@ -1,1 +1,1 @@
-print("Hello from init.")
+require("default")
