@@ -60,7 +60,6 @@ return {
 		dependencies = {
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "williamboman/mason-lspconfig.nvim" },
-			"joechrisellis/lsp-format-modifications.nvim",
 			"nvim-lua/plenary.nvim",
 		},
 		config = function()
@@ -76,12 +75,6 @@ return {
 				vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
 				vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
 				vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
-
-				vim.api.nvim_buf_create_user_command(bufnr, "FormatModifications", function()
-					local lsp_format_modifications = require("lsp-format-modifications")
-					lsp_format_modifications.format_modifications(client, bufnr)
-				end, {})
-				vim.keymap.set("n", "<leader>fm", ":FormatModifications<CR>")
 			end)
 
 			require("mason-lspconfig").setup({
