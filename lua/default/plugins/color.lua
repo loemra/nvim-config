@@ -11,6 +11,6 @@ return {
 			else
 				vim.cmd([[ set background=dark ]])
 			end
-		end)
+		end, {desc = "Toggle colorscheme dark/light"})
 	end,
 }

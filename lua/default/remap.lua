@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = "Open netre explorer" })
 vim.keymap.set("i", "jk", "<esc>")
 vim.keymap.set("n", "<leader>qq", ":qa!<CR>")
 

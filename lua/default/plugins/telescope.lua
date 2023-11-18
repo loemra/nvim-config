@@ -11,6 +11,7 @@ return {
 				require("telescope.builtin").find_files()
 			end,
 			mode = { "n" },
+			desc = "Telescope find files",
 		},
 		{
 			"<leader>fs",
@@ -18,6 +19,7 @@ return {
 				require("telescope.builtin").live_grep()
 			end,
 			mode = { "n" },
+			desc = "Telescope find string",
 		},
 		{
 			"<leader>fk",
@@ -25,6 +27,7 @@ return {
 				require("telescope.builtin").keymaps()
 			end,
 			mode = { "n" },
+			desc = "Telescope find keymaps",
 		},
 		{
 			"<leader>gc",
@@ -32,6 +35,7 @@ return {
 				require("telescope.builtin").git_commits()
 			end,
 			mode = { "n" },
+			desc = "Telescope view git commits",
 		},
 		{
 			"<leader>gs",
@@ -39,6 +43,7 @@ return {
 				require("telescope.builtin").git_status()
 			end,
 			mode = { "n" },
+			desc = "Telescope view git status"
 		},
 	},
 	opts = {
