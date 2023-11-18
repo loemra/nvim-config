@@ -1,9 +1,10 @@
 return {
 	"stevearc/conform.nvim",
+	lazy = true,
 	dependencies = {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
-	event = { "BufReadPre", "BufNewFile" },
+	event = { "LspAttach" },
 	cmd = { "ConformInfo" },
 	keys = {
 		{
@@ -11,6 +12,8 @@ return {
 			function()
 				local try_async = function(err)
 					if err ~= nil then
+						print(err)
+						print("formatting buffer async")
 						require("conform").format({ async = true, lsp_fallback = true })
 					end
 				end
@@ -24,19 +27,18 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
+			json = { "jq" },
 		},
 		-- format_on_save = { timeout_ms = 500, lsp_fallback = true },
 	},
 	config = function(_, opts)
-		require("conform").setup(opts)
-		-- make sure that all of the formatters are installed.
-		require("mason-tool-installer").setup({
-			ensure_installed = {
-				"stylua",
-				"isort",
-				"black",
-			},
-		})
+		local conform = require("conform")
+		conform.setup(opts)
+
+		conform.formatters.black = {
+			prepend_args = { "-l 80", "--preview" },
+		}
+
 		-- format modifications located in the lsp file.
 	end,
 	init = function()

@@ -5,7 +5,7 @@ return {
 	config = function()
 		vim.cmd([[ set background=dark ]])
 		vim.cmd([[ colorscheme everforest ]])
-		vim.keymap.set("n", "<leader>tt", function()
+		vim.keymap.set("n", "<leader>ct", function()
 			if vim.o.background == "dark" then
 				vim.cmd([[ set background=light ]])
 			else

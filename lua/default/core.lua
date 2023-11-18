@@ -14,3 +14,6 @@ opt.splitright = true
 opt.splitbelow = true
 
 vim.opt.mouse = ""
+
+-- Airline setup.
+vim.g.airline_powerline_fonts = 1

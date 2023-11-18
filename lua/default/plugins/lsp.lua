@@ -21,6 +21,7 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
+			"VonHeikemen/lsp-zero.nvim",
 		},
 		config = function()
 			local lsp_zero = require("lsp-zero")
@@ -47,27 +48,24 @@ return {
 			})
 		end,
 	},
-	{
-		"williamboman/mason.nvim",
-		lazy = false,
-		config = true,
-	},
 	-- LSP
 	{
 		"neovim/nvim-lspconfig",
 		cmd = { "LspInfo", "LspInstall", "LspStart" },
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "williamboman/mason-lspconfig.nvim" },
+			"hrsh7th/cmp-nvim-lsp",
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
 			"nvim-lua/plenary.nvim",
+			"VonHeikemen/lsp-zero.nvim",
 		},
 		config = function()
 			-- This is where all the LSP shenanigans will live
 			local lsp_zero = require("lsp-zero")
 			lsp_zero.extend_lspconfig()
 
-			lsp_zero.on_attach(function(client, bufnr)
+			lsp_zero.on_attach(function(_, bufnr)
 				-- see :help lsp-zero-keybindings
 				local opts = { buffer = bufnr }
 

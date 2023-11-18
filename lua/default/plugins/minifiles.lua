@@ -4,7 +4,7 @@ return {
 		"nvim-tree/nvim-web-devicons"
 	},
 	version = false,
-	lazy = false,
+	lazy = true,
 	keys = {
 		{
 			"<leader>ft",

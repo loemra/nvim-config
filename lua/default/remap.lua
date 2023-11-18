@@ -19,3 +19,7 @@ vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["+d]])
 vim.keymap.set("n", "<leader>dd", [["+dd]])
+
+-- terminal
+vim.keymap.set("n", "<leader>t", ":split term://zsh<CR>")
+vim.keymap.set("t", "<leader><Esc>", "<C-\\><C-n>")
