@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd([[ set background=dark ]])
+		vim.cmd([[ set background=light ]])
 		vim.cmd([[ colorscheme everforest ]])
 		vim.keymap.set("n", "<leader>ct", function()
 			if vim.o.background == "dark" then

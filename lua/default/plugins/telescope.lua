@@ -14,6 +14,22 @@ return {
 			desc = "Telescope find files",
 		},
 		{
+			"<leader>fh",
+			function()
+				require("telescope.builtin").find_files({ hidden = true, no_ignore = true, no_ignore_parent = true })
+			end,
+			mode = { "n" },
+			desc = "Telescope find hidden and ignored files",
+		},
+		{
+			"<leader>fl",
+			function()
+				require("telescope.builtin").find_files({ hidden = true, no_ignore = true, search_dirs = {"./logs/"} })
+			end,
+			mode = { "n" },
+			desc = "Telescope find log files",
+		},
+		{
 			"<leader>fs",
 			function()
 				require("telescope.builtin").live_grep()
@@ -43,7 +59,7 @@ return {
 				require("telescope.builtin").git_status()
 			end,
 			mode = { "n" },
-			desc = "Telescope view git status"
+			desc = "Telescope view git status",
 		},
 	},
 	opts = {

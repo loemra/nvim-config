@@ -7,10 +7,10 @@ vim.keymap.set("n", "<leader>qq", ":qa!<CR>")
 -- splits
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>")
 vim.keymap.set("n", "<leader>sh", ":split<CR>")
-vim.keymap.set("n", "<leader>h", "<c-w>h<CR>")
-vim.keymap.set("n", "<leader>j", "<c-w>j<CR>")
-vim.keymap.set("n", "<leader>k", "<c-w>k<CR>")
-vim.keymap.set("n", "<leader>l", "<c-w>l<CR>")
+-- vim.keymap.set("n", "<leader>h", "<c-w>h<CR>")
+-- vim.keymap.set("n", "<leader>j", "<c-w>j<CR>")
+-- vim.keymap.set("n", "<leader>k", "<c-w>k<CR>")
+-- vim.keymap.set("n", "<leader>l", "<c-w>l<CR>")
 
 -- yank, delete and clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])

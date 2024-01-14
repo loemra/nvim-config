@@ -81,7 +81,16 @@ return {
 					lsp_zero.default_setup,
 					lua_ls = function()
 						-- (Optional) Configure lua language server for neovim
-						local lua_opts = lsp_zero.nvim_lua_ls()
+						local lua_opts = lsp_zero.nvim_lua_ls({
+							settings = {
+								Lua = {
+									diagnostics = {
+										-- Get the language server to recognize the `vim` global
+										globals = { "vim" },
+									},
+								},
+							},
+						})
 						require("lspconfig").lua_ls.setup(lua_opts)
 					end,
 				},

@@ -1,9 +1,9 @@
 return {
-	[1] = "mfussenegger/nvim-lint",
+	"mfussenegger/nvim-lint",
 	dependencies = {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
-	event = { "BufEnter", "BufRead" },
+	event = { "LspAttach" },
 	lazy = true,
 	opts = {
 		lua = { "selene" },
@@ -24,6 +24,7 @@ return {
 
 		vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
 			callback = function()
+				-- TryLint()
 				require("lint").try_lint()
 			end,
 		})

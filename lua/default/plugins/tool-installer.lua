@@ -1,6 +1,7 @@
 return {
 	{
 		[1] = "williamboman/mason.nvim",
+		cmd="Mason",
 		lazy = true,
 		config = true,
 	},

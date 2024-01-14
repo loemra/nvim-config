@@ -36,7 +36,7 @@ return {
 		conform.setup(opts)
 
 		conform.formatters.black = {
-			prepend_args = { "-l 80", "--preview" },
+			prepend_args = { "-l 79", "--preview" },
 		}
 
 		-- format modifications located in the lsp file.
