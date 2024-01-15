@@ -8,18 +8,11 @@ return {
 		"TmuxNavigateRight",
 		"TmuxNavigatePrevious",
 	},
-	opts = {
-		disable_when_zoomed = true,
-		keybindings = {
-			left = "<C-h>",
-			down = "<C-j>",
-			up = "<C-k>",
-			right = "<C-l>",
-			last_active = "<C-\\>",
-			next = "<C-Space>",
-		},
+	keys = {
+		{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+		{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+		{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+		{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+		{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 	},
-	config = function(_, opts)
-		require("nvim-tmux-navigation").setup(opts)
-	end,
 }
