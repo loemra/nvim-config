@@ -1,6 +1,13 @@
 return {
 	"alexghergh/nvim-tmux-navigation",
 	lazy = false,
+	cmd = {
+		"TmuxNavigateLeft",
+		"TmuxNavigateDown",
+		"TmuxNavigateUp",
+		"TmuxNavigateRight",
+		"TmuxNavigatePrevious",
+	},
 	opts = {
 		disable_when_zoomed = true,
 		keybindings = {
