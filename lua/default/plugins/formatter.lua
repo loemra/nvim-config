@@ -28,6 +28,7 @@ return {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			json = { "jq" },
+			ocaml = { "ocamlformat" },
 		},
 		-- format_on_save = { timeout_ms = 500, lsp_fallback = true },
 	},
